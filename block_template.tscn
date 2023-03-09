@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvbs0i4iwfi3m"]
+
+[ext_resource type="Script" path="res://BlockTemplate.gd" id="1_gfci4"]
+[ext_resource type="PhysicsMaterial" uid="uid://cv5aeqntax6jb" path="res://block_physics_material.tres" id="1_smtqx"]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+disable_mode = 2
+mass = 50.0
+physics_material_override = ExtResource("1_smtqx")
+gravity_scale = 0.0
+continuous_cd = 2
+max_contacts_reported = 3
+contact_monitor = true
+can_sleep = false
+freeze = true
+freeze_mode = 1
+linear_damp = 5.0
+script = ExtResource("1_gfci4")

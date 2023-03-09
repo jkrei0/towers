@@ -1,0 +1,344 @@
+[gd_scene load_steps=33 format=3 uid="uid://cbodwp53sxgc1"]
+
+[ext_resource type="PackedScene" uid="uid://dvbs0i4iwfi3m" path="res://block_template.tscn" id="1_a3ro1"]
+[ext_resource type="Script" path="res://Main.gd" id="1_r2ya3"]
+[ext_resource type="Texture2D" uid="uid://bfppj71wsu1wb" path="res://assets/images/background.png" id="2_cy7xj"]
+[ext_resource type="Script" path="res://Base.gd" id="2_m4td7"]
+[ext_resource type="PhysicsMaterial" uid="uid://cv5aeqntax6jb" path="res://block_physics_material.tres" id="3_3ph4s"]
+[ext_resource type="Texture2D" uid="uid://bhbqi5plg17fg" path="res://assets/images/block_square.png" id="3_h1nj4"]
+[ext_resource type="Texture2D" uid="uid://d3aov56uh6ow4" path="res://assets/images/button.png" id="3_qvsrl"]
+[ext_resource type="Texture2D" uid="uid://c7ruuo52r86jq" path="res://assets/images/castle.png" id="4_dbtnd"]
+[ext_resource type="Texture2D" uid="uid://ieyqejrywr3k" path="res://assets/images/button_pressed.png" id="4_qtj5s"]
+[ext_resource type="Texture2D" uid="uid://5g3san32iicc" path="res://assets/images/button_rotate.png" id="5_lox1v"]
+[ext_resource type="Texture2D" uid="uid://bhxmql4msk1an" path="res://assets/images/block_L_right.png" id="6_kl216"]
+[ext_resource type="Texture2D" uid="uid://7gbr7ajng15" path="res://assets/images/button_rotate_pressed.png" id="6_u381e"]
+[ext_resource type="Texture2D" uid="uid://bl1yund3nw5cx" path="res://assets/images/block_L_left.png" id="8_60chv"]
+[ext_resource type="Script" path="res://Camera.gd" id="9_hucuj"]
+[ext_resource type="Texture2D" uid="uid://dgmsyuo7tj0k4" path="res://assets/images/block_straight.png" id="9_qx8kw"]
+[ext_resource type="Texture2D" uid="uid://bcebd5npj0ir7" path="res://assets/images/block_tshape.png" id="10_lnb5i"]
+[ext_resource type="Texture2D" uid="uid://bseiyctafprne" path="res://assets/images/block_zright.png" id="11_vhcta"]
+[ext_resource type="Texture2D" uid="uid://clyifvykmsa4l" path="res://assets/images/block_zleft.png" id="12_t4otg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_37jo6"]
+radius = 146.53
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_76j5n"]
+radius = 146.53
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ue6gq"]
+radius = 146.53
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_37a30"]
+radius = 146.53
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sgrq"]
+size = Vector2(96, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a38g3"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nd6ck"]
+size = Vector2(31.75, 31.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mx7jm"]
+size = Vector2(15.75, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5jti"]
+size = Vector2(31.75, 15.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sflmt"]
+size = Vector2(15.75, 32.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqmvo"]
+size = Vector2(15.75, 63.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cks3x"]
+size = Vector2(15.75, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06kh2"]
+size = Vector2(47.75, 15.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7gce"]
+size = Vector2(31.75, 15.75)
+
+[node name="Node2D" type="Node2D"]
+texture_filter = 2
+script = ExtResource("1_r2ya3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(256, 328)
+scale = Vector2(0.8, 0.61)
+texture = ExtResource("2_cy7xj")
+
+[node name="PositionIndicator" type="ColorRect" parent="."]
+offset_left = 232.0
+offset_top = -64.0
+offset_right = 264.0
+offset_bottom = 704.0
+color = Color(1, 1, 1, 0.470588)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(24, 552)
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("3_qvsrl")
+texture_pressed = ExtResource("4_qtj5s")
+shape = SubResource("CircleShape2D_37jo6")
+action = "Left"
+visibility_mode = 1
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
+position = Vector2(480, 552)
+scale = Vector2(-0.25, 0.25)
+texture_normal = ExtResource("3_qvsrl")
+texture_pressed = ExtResource("4_qtj5s")
+shape = SubResource("CircleShape2D_76j5n")
+action = "Right"
+visibility_mode = 1
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="."]
+position = Vector2(392, 620)
+rotation = 1.5708
+scale = Vector2(-0.2, 0.2)
+texture_normal = ExtResource("3_qvsrl")
+texture_pressed = ExtResource("4_qtj5s")
+shape = SubResource("CircleShape2D_ue6gq")
+action = "Drop"
+visibility_mode = 1
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="."]
+position = Vector2(112, 560)
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("5_lox1v")
+texture_pressed = ExtResource("6_u381e")
+shape = SubResource("CircleShape2D_37a30")
+action = "SpinCW"
+visibility_mode = 1
+
+[node name="Base" type="StaticBody2D" parent="."]
+position = Vector2(248, 584)
+physics_material_override = ExtResource("3_3ph4s")
+script = ExtResource("2_m4td7")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Base"]
+position = Vector2(0, 32)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("4_dbtnd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_2sgrq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Base"]
+position = Vector2(-24, -8)
+shape = SubResource("RectangleShape2D_a38g3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Base"]
+position = Vector2(24, -8)
+shape = SubResource("RectangleShape2D_a38g3")
+
+[node name="Templates" type="CanvasGroup" parent="."]
+visible = false
+
+[node name="Square" parent="Templates" instance=ExtResource("1_a3ro1")]
+visible = false
+
+[node name="Bounds" type="ColorRect" parent="Templates/Square"]
+visible = false
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="CenterOfMass" type="Node2D" parent="Templates/Square"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Templates/Square"]
+position = Vector2(0, -8)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("3_h1nj4")
+region_rect = Rect2(32, 0, 32, 32)
+
+[node name="Area2D" type="Area2D" parent="Templates/Square"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Templates/Square/Area2D"]
+position = Vector2(-2.84217e-14, -2.84217e-14)
+shape = SubResource("RectangleShape2D_nd6ck")
+
+[node name="Lright" parent="Templates" instance=ExtResource("1_a3ro1")]
+visible = false
+
+[node name="Bounds" type="ColorRect" parent="Templates/Lright"]
+visible = false
+offset_left = -16.0
+offset_top = -24.0
+offset_right = 16.0
+offset_bottom = 24.0
+
+[node name="CenterOfMass" type="Node2D" parent="Templates/Lright"]
+position = Vector2(-5.328, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="Templates/Lright"]
+position = Vector2(-9.53674e-07, -1.43051e-06)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("6_kl216")
+region_rect = Rect2(128, 0, 32, 32)
+
+[node name="Area2D" type="Area2D" parent="Templates/Lright"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Templates/Lright/Area2D"]
+position = Vector2(-8, -7.875)
+shape = SubResource("RectangleShape2D_mx7jm")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Templates/Lright/Area2D"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_i5jti")
+
+[node name="Lleft" parent="Templates" instance=ExtResource("1_a3ro1")]
+visible = false
+
+[node name="Bounds" type="ColorRect" parent="Templates/Lleft"]
+visible = false
+offset_left = -16.0
+offset_top = -24.0
+offset_right = 16.0
+offset_bottom = 24.0
+
+[node name="CenterOfMass" type="Node2D" parent="Templates/Lleft"]
+position = Vector2(5.328, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="Templates/Lleft"]
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("8_60chv")
+region_rect = Rect2(160, 0, 32, 32)
+
+[node name="Area2D" type="Area2D" parent="Templates/Lleft"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Templates/Lleft/Area2D"]
+position = Vector2(8, -7.5)
+shape = SubResource("RectangleShape2D_sflmt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Templates/Lleft/Area2D"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_i5jti")
+
+[node name="Straight" parent="Templates" instance=ExtResource("1_a3ro1")]
+visible = false
+
+[node name="Bounds" type="ColorRect" parent="Templates/Straight"]
+visible = false
+offset_left = -8.0
+offset_top = -32.0
+offset_right = 8.0
+offset_bottom = 32.0
+
+[node name="CenterOfMass" type="Node2D" parent="Templates/Straight"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Templates/Straight"]
+rotation = -1.5708
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("9_qx8kw")
+region_rect = Rect2(96, 0, 32, 32)
+
+[node name="Area2D" type="Area2D" parent="Templates/Straight"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Templates/Straight/Area2D"]
+shape = SubResource("RectangleShape2D_vqmvo")
+
+[node name="Tshape" parent="Templates" instance=ExtResource("1_a3ro1")]
+visible = false
+
+[node name="Bounds" type="ColorRect" parent="Templates/Tshape"]
+visible = false
+offset_left = -24.0
+offset_top = -16.0
+offset_right = 24.0
+offset_bottom = 16.0
+
+[node name="CenterOfMass" type="Node2D" parent="Templates/Tshape"]
+position = Vector2(0, -2.664)
+
+[node name="Sprite2D" type="Sprite2D" parent="Templates/Tshape"]
+rotation = -1.5708
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("10_lnb5i")
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Area2D" type="Area2D" parent="Templates/Tshape"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Templates/Tshape/Area2D"]
+position = Vector2(0, -7.875)
+shape = SubResource("RectangleShape2D_cks3x")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Templates/Tshape/Area2D"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_06kh2")
+
+[node name="Zright" parent="Templates" instance=ExtResource("1_a3ro1")]
+visible = false
+
+[node name="Bounds" type="ColorRect" parent="Templates/Zright"]
+visible = false
+offset_left = -24.0
+offset_top = -16.0
+offset_right = 24.0
+offset_bottom = 16.0
+
+[node name="CenterOfMass" type="Node2D" parent="Templates/Zright"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Templates/Zright"]
+rotation = -1.5708
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("11_vhcta")
+region_rect = Rect2(128, 0, 32, 32)
+
+[node name="Area2D" type="Area2D" parent="Templates/Zright"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Templates/Zright/Area2D"]
+position = Vector2(-8, -8)
+shape = SubResource("RectangleShape2D_j7gce")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Templates/Zright/Area2D"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_j7gce")
+
+[node name="Zleft" parent="Templates" instance=ExtResource("1_a3ro1")]
+visible = false
+
+[node name="Bounds" type="ColorRect" parent="Templates/Zleft"]
+visible = false
+offset_left = -24.0
+offset_top = -16.0
+offset_right = 24.0
+offset_bottom = 16.0
+
+[node name="CenterOfMass" type="Node2D" parent="Templates/Zleft"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Templates/Zleft"]
+rotation = -1.5708
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("12_t4otg")
+region_rect = Rect2(160, 0, 32, 32)
+
+[node name="Area2D" type="Area2D" parent="Templates/Zleft"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Templates/Zleft/Area2D"]
+position = Vector2(8, -8)
+shape = SubResource("RectangleShape2D_j7gce")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Templates/Zleft/Area2D"]
+position = Vector2(-8, 8)
+shape = SubResource("RectangleShape2D_j7gce")
+
+[node name="Blocks" type="CanvasGroup" parent="."]
+
+[node name="PlacedBlocks" type="CanvasGroup" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(250, 325)
+ignore_rotation = false
+script = ExtResource("9_hucuj")
